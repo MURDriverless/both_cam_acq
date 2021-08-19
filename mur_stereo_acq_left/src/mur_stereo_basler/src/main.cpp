@@ -55,14 +55,21 @@ unsigned int grabCount = 6000;
 class ImageConverter {
   ros::NodeHandle nh_;
   image_transport::ImageTransport it_;
-  image_transport::Subscriber image_sub_;
-  image_transport::Publisher image_pub_;
+  image_transport::Subscriber image_sub_left;
+  image_transport::Publisher image_pub_left;
+
+  image_transport::Subscriber image_sub_right;
+  image_transport::Publisher image_pub_right;
 
 public:
   ImageConverter():it_(nh_) {
-    image_sub_ = it_.subscribe("/imagePublisher/left_image", 1,
+    image_sub_left = it_.subscribe("/imagePublisher/left_image", 1,
     &ImageConverter::imageCb, this);
-    image_pub_ = it_.advertise("/imagePublisher/left_image", 1);
+    image_pub_left = it_.advertise("/imagePublisher/left_image", 1);
+
+    image_sub_right = it_.subscribe("/imagePublisher/right_image", 1,
+    &ImageConverter::imageCb, this);
+    image_pub_right = it_.advertise("/imagePublisher/right_image", 1);
 
   }
 
@@ -147,7 +154,6 @@ int main(int argc, char** argv) {
 
 // time.sleep(0.5)
 
-
 // if leftcamera.GetGrabResultWaitObject().Wait(0):
 //     print("Grab results wait in the left queue.")
 // if rightcamera.GetGrabResultWaitObject().Wait(0):
@@ -173,19 +179,32 @@ int main(int argc, char** argv) {
 
         ros::Time start_time = ros::Time::now();
 
+        std::cout << "camera setup complete" << std::endl;
+
         int imageCount = 0;
 
-        while(ros::ok() && imageCount < grabCount) {
+        camera1->startGrabbing(grabCount);
+        camera2->startGrabbing(grabCount);
 
-            camera1->startGrabbing(grabCount);
-            camera2->startGrabbing(grabCount);
+
+        while(imageCount < grabCount && ros::ok()) {
+            
+            // std::cout << "round: " << imageCount << std::endl;
+
 
             for (int i = 0; i < 3; i++) {
                 if (camera1->isReady() & camera2->isReady()) {
+                    std::cout << "both cameras are ready: " << imageCount << std::endl;
                     camera1->softwareTrigger();
                     camera2->softwareTrigger();   
+                    break;
                 }
-            }
+                else {
+                  // std::cout << "not ready" << std::endl;
+                }
+            } 
+
+            // std::cout << "triggered via software" << std::endl;
 
             sleep(0.5);
 
@@ -205,8 +224,13 @@ int main(int argc, char** argv) {
             int width2;
             uint8_t* buffer2;
 
+            // while camera.NumReadyBuffers.GetValue() > 0:
+            //   camera.RetrieveResult(5000, pylon.TimeoutHandling_Return)
+
             bool ret1 = camera1->retrieveResult(height1, width1, buffer1);
             bool ret2 = camera2->retrieveResult(height2, width2, buffer2);
+
+            // std::cout << "retrieved images" << std::endl;
 
             ros::Time camera1_time = ros::Time::now();
             
@@ -239,26 +263,40 @@ int main(int argc, char** argv) {
                 // convert the CvImage object into a ROS image 
                 myCvImage_right.toImageMsg(right_img_msg);                    
 
-                cv::Mat inMat = cv::Mat(height1, width1, CV_8UC3, buffer1);
+                // cv::Mat inMat = cv::Mat(height1, width1, CV_8UC3, buffer1);
                 cv::Mat dst;
-                cv::cvtColor(inMat, dst, cv::COLOR_BGR2RGB); 
+                cv::cvtColor(myCvImage_left.image, dst, cv::COLOR_BGR2RGB); 
                 cv::imshow("Left camera", dst);
                 cv::waitKey(100);
 
-                cv::Mat inMat2 = cv::Mat(height2, width2, CV_8UC3, buffer2);
+                // char image_name[256];
+                // std::sprintf(image_name,"LeftLeft%04d_L.png", imageCount);
+                // cv::imwrite(image_name, dst);
+
+                // cv::Mat inMat2 = cv::Mat(height2, width2, CV_8UC3, buffer2);
                 cv::Mat dst2;
-                cv::cvtColor(inMat2, dst2, cv::COLOR_BGR2RGB); 
+                cv::cvtColor(myCvImage_right.image, dst2, cv::COLOR_BGR2RGB); 
                 cv::imshow("Right camera", dst2);
                 cv::waitKey(100);
+
+                // char image_name2[256];
+                // std::sprintf(image_name2,"RightRight%04d_R.png", imageCount);
+                // cv::imwrite(image_name2, dst2);
             }
             imageCount++;
 
-            camera1->stopGrabbing();
-            camera2->stopGrabbing();
+            // std::cout << "before stop grabbing" << std::endl;
+
+            // camera1->stopGrabbing();
+            // camera2->stopGrabbing();
+
+            // std::cout << "after stop grabbing" << std::endl;
 
             left_imagePublisher.publish(left_img_msg);
             right_imagePublisher.publish(right_img_msg);
             
+            // std::cout << "published via ros" << std::endl;
+
             if (camera1->getTemperatureReading() > 75) {
                 std::cout << "CRITICAL temperature state, closing camera" << std::endl;
                 break; 
@@ -266,6 +304,9 @@ int main(int argc, char** argv) {
 
             ros::spinOnce();
         }
+
+        camera1->stopGrabbing();
+        camera2->stopGrabbing();
     }   
     catch (const std::exception &e)
     {

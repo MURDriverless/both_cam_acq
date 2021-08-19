@@ -443,7 +443,7 @@ RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
 //Name of the computer/site where compile is being run
-SITE:STRING=8a519754841b
+SITE:STRING=99c26940745e
 
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
@@ -479,7 +479,7 @@ class_loader_DIR:PATH=/opt/ros/melodic/share/class_loader/cmake
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
 //The directory containing a CMake configuration file for cv_bridge.
-cv_bridge_DIR:PATH=/workspace/both_cam_acq/mur_stereo_acq_left/devel/share/cv_bridge/cmake
+cv_bridge_DIR:PATH=/opt/ros/melodic/share/cv_bridge/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/melodic/share/gencpp/cmake

@@ -10,26 +10,3 @@ Symlinking /workspace/both_cam_acq/mur_stereo_acq_left/devel/./env.sh
 Symlinking /workspace/both_cam_acq/mur_stereo_acq_left/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
 Symlinking /workspace/both_cam_acq/mur_stereo_acq_left/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
 Symlinking /workspace/both_cam_acq/mur_stereo_acq_left/devel/lib/pkgconfig/catkin_tools_prebuild.pc
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/setup.zsh, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./setup.zsh)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/_setup_util.py, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./_setup_util.py)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/setup.bash, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./setup.bash)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/local_setup.bash, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./local_setup.bash)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/local_setup.zsh, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./local_setup.zsh)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/local_setup.sh, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./local_setup.sh)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/setup.sh, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./setup.sh)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/cmake.lock, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./cmake.lock)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/env.sh, /workspace/left_cam_acq/mur_stereo_acq_left/devel/./env.sh)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake, /workspace/left_cam_acq/mur_stereo_acq_left/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake, /workspace/left_cam_acq/mur_stereo_acq_left/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake)
-Cleaning: (/workspace/left_cam_acq/mur_stereo_acq_left/devel/.private/catkin_tools_prebuild/lib/pkgconfig/catkin_tools_prebuild.pc, /workspace/left_cam_acq/mur_stereo_acq_left/devel/lib/pkgconfig/catkin_tools_prebuild.pc)
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/./setup.zsh
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/./_setup_util.py
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/./setup.bash
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/./local_setup.bash
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/./local_setup.zsh
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/./local_setup.sh
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/./setup.sh
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/./env.sh
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
-Unlinking: /workspace/left_cam_acq/mur_stereo_acq_left/devel/lib/pkgconfig/catkin_tools_prebuild.pc

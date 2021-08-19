@@ -1,0 +1,7 @@
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:[m[K In function '[01m[Kint main(int, char**)[m[K':
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:201:51:[m[K [01;31m[Kerror: [m[Kexpected '[01m[K;[m[K' before '[01m[Kstd[m[K'
+             std::cout << "triggered via software" [01;31m[Kstd[m[K::endl;
+                                                   [01;31m[K^~~[m[K
+make[2]: *** [CMakeFiles/both_cam_acq.dir/src/main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/both_cam_acq.dir/all] Error 2
+make: *** [all] Error 2

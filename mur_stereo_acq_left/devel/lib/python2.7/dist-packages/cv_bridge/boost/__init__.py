@@ -1,1 +1,0 @@
-/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/cv_bridge/lib/python2.7/dist-packages/cv_bridge/boost/__init__.py

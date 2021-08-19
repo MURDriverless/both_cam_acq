@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project("both_image_acq")
+project("both_cam_acq")
 
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/FindPylon.cmake")
 

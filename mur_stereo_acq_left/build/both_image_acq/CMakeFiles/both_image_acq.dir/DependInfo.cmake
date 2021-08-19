@@ -18,9 +18,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/cv_bridge/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/usr/include/opencv"
   "/opt/pylon/include"
   "/usr/local/cuda/include"
   "/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes"

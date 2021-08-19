@@ -304,6 +304,7 @@ CMakeFiles/both_image_acq.dir/src/main.cpp.o
  /opt/pylon/include/pylon/private/DeviceSpecificImageEventHandlerTie.h
  /opt/pylon/include/pylon/private/DeviceSpecificInstantCamera.h
  /opt/pylon/include/pylon/stdinclude.h
+ /opt/ros/melodic/include/cv_bridge/cv_bridge.h
  /opt/ros/melodic/include/geometry_msgs/Point.h
  /opt/ros/melodic/include/geometry_msgs/Pose.h
  /opt/ros/melodic/include/geometry_msgs/Quaternion.h
@@ -384,6 +385,7 @@ CMakeFiles/both_image_acq.dir/src/main.cpp.o
  /opt/ros/melodic/include/visualization_msgs/MarkerArray.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
+ /usr/include/opencv/cxcore.h
  /usr/local/include/opencv4/opencv2/cudaarithm.hpp
  /usr/local/include/opencv4/opencv2/cudabgsegm.hpp
  /usr/local/include/opencv4/opencv2/cudacodec.hpp
@@ -406,7 +408,6 @@ CMakeFiles/both_image_acq.dir/src/main.cpp.o
  /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/StereoCommon/ConeEst.hpp
  /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/StereoCommon/ConeROI.hpp
  /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/StereoCommon/PreviewArgs.hpp
- /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/cv_bridge/include/cv_bridge/cv_bridge.h
  /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/opencv2/calib3d.hpp
  /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/opencv2/core.hpp
  /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/opencv2/core/affine.hpp

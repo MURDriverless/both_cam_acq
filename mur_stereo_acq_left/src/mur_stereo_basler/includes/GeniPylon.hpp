@@ -44,16 +44,16 @@ class PylonCam: public IGeniCam {
 
             // The parameter MaxNumBuffer can be used to control the count of buffers
             // allocated for grabbing. The default value of this parameter is 10.
-            // camera.MaxNumBuffer = 1;
+            camera.MaxNumBuffer = 1;
 
             camera.Open();
 
             GenApi::INodeMap& nodemap = camera.GetNodeMap();
 
             // captures only the bottom half of the images 
-            camera.OffsetY.SetValue(600);
+            // camera.OffsetY.SetValue(600);
             camera.Width = 1920; 
-            camera.Height = 600; 
+            camera.Height = 1200; 
 
             // setting the pixelformat removed the 3x3 grid problem when recording images and it allows us to record in colored! 
             Pylon::CEnumParameter(nodemap, "PixelFormat").SetValue("RGB8");
@@ -152,6 +152,14 @@ class PylonCam: public IGeniCam {
             // Set the measuring location to core board
             // can't measure any other points on the camera. 
             Pylon::CEnumParameter(nodemap, "DeviceTemperatureSelector").SetValue("Coreboard");
+
+            // // Select the Frame Start trigger
+            // Pylon::CEnumParameter(nodemap, "TriggerSelector").SetValue("FrameStart");
+            // // Enable triggered image acquisition for the Frame Start trigger
+            // Pylon::CEnumParameter(nodemap, "TriggerMode").SetValue("On");
+            // // Set the trigger source for the Frame Start trigger to Software
+            // Pylon::CEnumParameter(nodemap, "TriggerSource").SetValue("Software");
+
          
 
             /** 
@@ -194,7 +202,12 @@ class PylonCam: public IGeniCam {
         }
 
         bool isReady() {
-            return camera.WaitForFrameTriggerReady(200, Pylon::TimeoutHandling_ThrowException);
+            // Select and enable the Frame Start trigger
+            camera.TriggerSelector.SetValue(Basler_UniversalCameraParams::TriggerSelector_FrameStart);
+            camera.TriggerMode.SetValue(Basler_UniversalCameraParams::TriggerMode_On);
+            camera.TriggerSource.SetValue(Basler_UniversalCameraParams::TriggerSource_Software);
+
+            return camera.WaitForFrameTriggerReady(5000, Pylon::TimeoutHandling_ThrowException);
         }
 
         double getFrameRate() {

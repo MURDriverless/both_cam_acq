@@ -11,12 +11,6 @@ Not searching for unused variables given on the command line.
 [36m--[0m Check for working CXX compiler: /usr/bin/c++ - skipped
 [36m--[0m Detecting CXX compile features
 [36m--[0m Detecting CXX compile features - done
-[31m[1mCMake Error[0m at /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/CMakeLists.txt:4 (include):
-  include could not find load file:
-
-    /workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/cmake/FindPylon.cmake
-
-
 [36m--[0m Using CATKIN_DEVEL_PREFIX: /workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/both_image_acq
 [36m--[0m Using CMAKE_PREFIX_PATH: /workspace/both_cam_acq/mur_stereo_acq_left/devel;/opt/ros/melodic
 [36m--[0m This workspace overlays: /workspace/both_cam_acq/mur_stereo_acq_left/devel;/opt/ros/melodic
@@ -49,6 +43,6 @@ Not searching for unused variables given on the command line.
 [36m--[0m Found CUDNN: /usr/lib/x86_64-linux-gnu/libcudnn.so
 [36m--[0m Found NVINFER: /usr/lib/x86_64-linux-gnu/libnvinfer.so
 [36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
-[36m--[0m Configuring incomplete, errors occurred!
-See also "/workspace/both_cam_acq/mur_stereo_acq_left/build/both_image_acq/CMakeFiles/CMakeOutput.log".
-See also "/workspace/both_cam_acq/mur_stereo_acq_left/build/both_image_acq/CMakeFiles/CMakeError.log".
+[36m--[0m Configuring done
+[36m--[0m Generating done
+[36m--[0m Build files have been written to: /workspace/both_cam_acq/mur_stereo_acq_left/build/both_image_acq

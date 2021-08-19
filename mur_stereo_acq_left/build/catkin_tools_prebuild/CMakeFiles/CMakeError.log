@@ -1,25 +1,25 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /workspace/both_cam_acq/mur_stereo_acq_left/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_166b4/fast && /usr/bin/make  -f CMakeFiles/cmTC_166b4.dir/build.make CMakeFiles/cmTC_166b4.dir/build
+Run Build Command(s):/usr/bin/make cmTC_2abdd/fast && /usr/bin/make  -f CMakeFiles/cmTC_2abdd.dir/build.make CMakeFiles/cmTC_2abdd.dir/build
 make[1]: Entering directory '/workspace/both_cam_acq/mur_stereo_acq_left/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_166b4.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_166b4.dir/src.c.o -c /workspace/both_cam_acq/mur_stereo_acq_left/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_166b4
-/opt/cmake-3.18.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_166b4.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD -rdynamic CMakeFiles/cmTC_166b4.dir/src.c.o -o cmTC_166b4 
-CMakeFiles/cmTC_166b4.dir/src.c.o: In function `main':
+Building C object CMakeFiles/cmTC_2abdd.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_2abdd.dir/src.c.o -c /workspace/both_cam_acq/mur_stereo_acq_left/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2abdd
+/opt/cmake-3.18.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2abdd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD -rdynamic CMakeFiles/cmTC_2abdd.dir/src.c.o -o cmTC_2abdd 
+CMakeFiles/cmTC_2abdd.dir/src.c.o: In function `main':
 src.c:(.text+0x3e): undefined reference to `pthread_create'
 src.c:(.text+0x4a): undefined reference to `pthread_detach'
 src.c:(.text+0x56): undefined reference to `pthread_cancel'
 src.c:(.text+0x67): undefined reference to `pthread_join'
 src.c:(.text+0x7b): undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_166b4.dir/build.make:105: recipe for target 'cmTC_166b4' failed
-make[1]: *** [cmTC_166b4] Error 1
+CMakeFiles/cmTC_2abdd.dir/build.make:105: recipe for target 'cmTC_2abdd' failed
+make[1]: *** [cmTC_2abdd] Error 1
 make[1]: Leaving directory '/workspace/both_cam_acq/mur_stereo_acq_left/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
-Makefile:140: recipe for target 'cmTC_166b4/fast' failed
-make: *** [cmTC_166b4/fast] Error 2
+Makefile:140: recipe for target 'cmTC_2abdd/fast' failed
+make: *** [cmTC_2abdd/fast] Error 2
 
 
 Source file was:
@@ -46,20 +46,20 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /workspace/both_cam_acq/mur_stereo_acq_left/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_21e0a/fast && /usr/bin/make  -f CMakeFiles/cmTC_21e0a.dir/build.make CMakeFiles/cmTC_21e0a.dir/build
+Run Build Command(s):/usr/bin/make cmTC_4ac90/fast && /usr/bin/make  -f CMakeFiles/cmTC_4ac90.dir/build.make CMakeFiles/cmTC_4ac90.dir/build
 make[1]: Entering directory '/workspace/both_cam_acq/mur_stereo_acq_left/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_21e0a.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_21e0a.dir/CheckFunctionExists.c.o -c /opt/cmake-3.18.2-Linux-x86_64/share/cmake-3.18/Modules/CheckFunctionExists.c
-Linking C executable cmTC_21e0a
-/opt/cmake-3.18.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_21e0a.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_21e0a.dir/CheckFunctionExists.c.o -o cmTC_21e0a  -lpthreads 
+Building C object CMakeFiles/cmTC_4ac90.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_4ac90.dir/CheckFunctionExists.c.o -c /opt/cmake-3.18.2-Linux-x86_64/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4ac90
+/opt/cmake-3.18.2-Linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4ac90.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_4ac90.dir/CheckFunctionExists.c.o -o cmTC_4ac90  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_21e0a.dir/build.make:105: recipe for target 'cmTC_21e0a' failed
-make[1]: *** [cmTC_21e0a] Error 1
+CMakeFiles/cmTC_4ac90.dir/build.make:105: recipe for target 'cmTC_4ac90' failed
+make[1]: *** [cmTC_4ac90] Error 1
 make[1]: Leaving directory '/workspace/both_cam_acq/mur_stereo_acq_left/build/catkin_tools_prebuild/CMakeFiles/CMakeTmp'
-Makefile:140: recipe for target 'cmTC_21e0a/fast' failed
-make: *** [cmTC_21e0a/fast] Error 2
+Makefile:140: recipe for target 'cmTC_4ac90/fast' failed
+make: *** [cmTC_4ac90/fast] Error 2
 
 
 
