@@ -1,0 +1,1 @@
+set(ORDERED_PATHS "/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/cv_bridge/lib;/opt/ros/melodic/lib")

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- <arg name="arg1"/> -->
+    <!-- <node pkg="both_cam_acq" type="both_cam_acq" name="both_cam_acq" args="$(arg arg1)" output="screen"/> -->
+    <node pkg="both_cam_acq" type="both_cam_acq" name="both_cam_acq" output="screen"/>
+</launch>
+

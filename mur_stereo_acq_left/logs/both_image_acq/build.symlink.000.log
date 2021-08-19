@@ -1,0 +1,4 @@
+Symlinking /workspace/both_cam_acq/mur_stereo_acq_left/devel/share/both_image_acq/cmake/both_image_acqConfig-version.cmake
+Symlinking /workspace/both_cam_acq/mur_stereo_acq_left/devel/share/both_image_acq/cmake/both_image_acqConfig.cmake
+Symlinking /workspace/both_cam_acq/mur_stereo_acq_left/devel/lib/both_image_acq/both_image_acq
+Symlinking /workspace/both_cam_acq/mur_stereo_acq_left/devel/lib/pkgconfig/both_image_acq.pc

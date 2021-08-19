@@ -1,0 +1,14 @@
+[35m[1mScanning dependencies of target both_image_acq[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/both_image_acq.dir/src/GeniWrap.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/both_image_acq.dir/src/main.cpp.o[0m
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:[m[K In function '[01m[Kint main(int, char**)[m[K':
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:168:32:[m[K [01;31m[Kerror: [m[K'[01m[Kclass IGeniCam[m[K' has no member named '[01m[KretreiveResult[m[K'; did you mean '[01m[KretrieveResult[m[K'?
+           bool ret1 = camera1->[01;31m[KretreiveResult[m[K(height1, width1, buffer1);
+                                [01;31m[K^~~~~~~~~~~~~~[m[K
+                                [32m[KretrieveResult[m[K
+CMakeFiles/both_image_acq.dir/build.make:81: recipe for target 'CMakeFiles/both_image_acq.dir/src/main.cpp.o' failed
+make[2]: *** [CMakeFiles/both_image_acq.dir/src/main.cpp.o] Error 1
+CMakeFiles/Makefile2:184: recipe for target 'CMakeFiles/both_image_acq.dir/all' failed
+make[1]: *** [CMakeFiles/both_image_acq.dir/all] Error 2
+Makefile:159: recipe for target 'all' failed
+make: *** [all] Error 2

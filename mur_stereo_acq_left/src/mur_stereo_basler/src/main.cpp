@@ -1,23 +1,17 @@
 /*
-Acquires images from the left camera and publishes them on a ROS Topic named /imagePublisher/left_image
 
-lightSetting 
-1 - off
-2 - daylight 5000K
-3 - daylight 6500K
-4 - Fluorescent 4000K
-5 - Tungsten 2800K
+23.06.2021
+What does this code do?
 
-exposureTimeSetting 
-1 - defaultExposureTime == 5000us
-                
+It uses the cameras to capture images 
 
-By: Kelvin Liao, Spatial and Perception Engineer at MUR 2020
-Date: 17/08/2021 
-
-Adapted from: Andrew Huang, Spatial and Perception Engineer at MUR 2020
 
 */
+
+#include <iostream>
+
+
+#include <unistd.h>
 #include <ros/duration.h>
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
@@ -54,10 +48,9 @@ Adapted from: Andrew Huang, Spatial and Perception Engineer at MUR 2020
 #endif
 
 const std::string CAMARA_NAME_L = "CameraLeft (40068492)";
+const std::string CAMARA_NAME_R = "CameraRight (40061679)";
 
-unsigned int grabCount =6000;
-
-static const std::string OPENCV_WINDOW = "Left Image Window";
+unsigned int grabCount = 6000;
 
 class ImageConverter {
   ros::NodeHandle nh_;
@@ -105,24 +98,14 @@ public:
 };
 
 int main(int argc, char** argv) {
-    ros::init(argc, argv, "Left_Image_Acquisition");
+
+    ros::init(argc, argv, "Both_Image_Acquisition");
     ros::NodeHandle nh;
     image_transport::ImageTransport it(nh);
 
     ros::Publisher left_imagePublisher = nh.advertise<sensor_msgs::Image>("/imagePublisher/left_image", 1);
-
+    ros::Publisher right_imagePublisher = nh.advertise<sensor_msgs::Image>("/imagePublisher/right_image", 1);
     ImageConverter ic; 
-
-    // Prep real cameras
-    std::unique_ptr<IGeniCam> camera1;
-
-    // run the cameras 
-    camera1.reset(IGeniCam::create(GeniImpl::Pylon_i));
-    camera1->initializeLibrary();
-    
-    int exitCode = 0;
-
-    int imageCount = 0;
 
     int lightSetting = 1;
     int exposureTimeSetting = 1;
@@ -135,94 +118,158 @@ int main(int argc, char** argv) {
       std::cout << "reading successful" << std::endl;
     }
 
+    // Prep real cameras
+    std::unique_ptr<IGeniCam> camera1;
+    std::unique_ptr<IGeniCam> camera2;
+
+    // std::cout << "before geni code" << std::endl;
+
+    // run the cameras 
+    camera1.reset(IGeniCam::create(GeniImpl::Pylon_i));
+    camera2.reset(IGeniCam::create(GeniImpl::Pylon_i));
+    
+    // std::cout << "after geni cam code" << std::endl;
+
+    camera1->initializeLibrary();
+    camera2->initializeLibrary();
+    
+    int exitCode = 0;
+
+    // std::cout << "initialising library" << std::endl;
+
+// leftcamera.StartGrabbing(pylon.GrabStrategy_LatestImageOnly)
+// rightcamera.StartGrabbing(pylon.GrabStrategy_LatestImageOnly)
+
+// for i in range(3):
+//     if leftcamera.WaitForFrameTriggerReady(200,pylon.TimeoutHandling_ThrowException) & rightcamera.WaitForFrameTriggerReady(200, pylon.TimeoutHandling_ThrowException):
+//         leftcamera.ExecuteSoftwareTrigger()
+//         rightcamera.ExecuteSoftwareTrigger()
+
+// time.sleep(0.5)
+
+
+// if leftcamera.GetGrabResultWaitObject().Wait(0):
+//     print("Grab results wait in the left queue.")
+// if rightcamera.GetGrabResultWaitObject().Wait(0):
+//     print("Grab results wait in the right queue.")
+
+// leftresult = leftcamera.RetrieveResult(0,pylon.TimeoutHandling_Return)
+// rightresult = rightcamera.RetrieveResult(0,pylon.TimeoutHandling_Return)
+
+// timestr = time.strftime("%Y%m%d-%H%M%S")
+// limg = pylon.PylonImage()
+// limg.AttachGrabResultBuffer(leftresult)
+// limg.Save(pylon.ImageFileFormat_Png,"Caps/left"+timestr+".png")
+// rimg = pylon.PylonImage()
+// rimg.AttachGrabResultBuffer(rightresult)
+// rimg.Save(pylon.ImageFileFormat_Png,"Caps/right"+timestr+".png")
+
+// leftcamera.StopGrabbing()
+// rightcamera.StopGrabbing()
+
     try {
-        // std::cout << "try block" << std::endl;
-
         camera1->setup(CAMARA_NAME_L, lightSetting, exposureTimeSetting, frameRateSetting);
+        camera2->setup(CAMARA_NAME_R, lightSetting, exposureTimeSetting, frameRateSetting);
 
-        camera1->startGrabbing(grabCount);
-        
         ros::Time start_time = ros::Time::now();
-        auto first_camera1 = std::chrono::high_resolution_clock::now();
-        auto camera1_prev = first_camera1;
-        double frameTime1;
-        double frameTime2;
-        auto camera1_done = first_camera1;
 
-        while (imageCount < grabCount && camera1->isGrabbing() && ros::ok()) {
-          
-          // Wait for an image and then retrieve it. A timeout of 5000 ms is used.
-          int height1;
-          int width1;
-          uint8_t* buffer1;
+        int imageCount = 0;
 
-          // std::cout << "while loop" << std::endl;
+        while(ros::ok() && imageCount < grabCount) {
 
-          // if (camera1->isReady()) {
-          //   std::cout << "camera1 is ready" << std::endl;
-          //   camera1->softwareTrigger();
-          // }
+            camera1->startGrabbing(grabCount);
+            camera2->startGrabbing(grabCount);
 
-          // camera1->softwareTrigger();
+            for (int i = 0; i < 3; i++) {
+                if (camera1->isReady() & camera2->isReady()) {
+                    camera1->softwareTrigger();
+                    camera2->softwareTrigger();   
+                }
+            }
 
-          bool ret1 = camera1->retreiveResult(height1, width1, buffer1);
-          ros::Time camera1_time = ros::Time::now();
-          
+            sleep(0.5);
 
-          sensor_msgs::Image left_img_msg;
+            //
+            // if leftcamera.GetGrabResultWaitObject().Wait(0):
+            //     print("Grab results wait in the left queue.")
+            // if rightcamera.GetGrabResultWaitObject().Wait(0):
+            //     print("Grab results wait in the right queue.")
+            
+            bool flag = true;
 
-          camera1_done = std::chrono::high_resolution_clock::now();
-          
-          frameTime1 = std::chrono::duration_cast<std::chrono::milliseconds>(camera1_done - first_camera1).count();
-          frameTime2 = std::chrono::duration_cast<std::chrono::milliseconds>(camera1_done - camera1_prev).count();
+            int height1;
+            int width1;
+            uint8_t* buffer1;
 
-          std::cout << "Camera Left Frame Rate is: " << camera1->getFrameRate();
-          std::cout << ", Exposure Time is: " << camera1->getExposureTime();
-          std::cout << ", Temperature reading is: " << camera1->getTemperatureReading(); 
-          std::cout << ", AbsTime is: " << frameTime1 << " ms";
-          std::cout << ", RelativeTime is: " << frameTime2 << std::endl;
-          
-          if (ret1) {
-            cv_bridge::CvImage myCvImage; 
+            int height2;
+            int width2;
+            uint8_t* buffer2;
 
-            // std::cout << "ret1 " << std::endl;
+            bool ret1 = camera1->retrieveResult(height1, width1, buffer1);
+            bool ret2 = camera2->retrieveResult(height2, width2, buffer2);
 
-            // put the image into a CvImage object 
-            myCvImage.image = cv::Mat(height1, width1, CV_8UC3, buffer1);
-            myCvImage.encoding = "bgr8";
+            ros::Time camera1_time = ros::Time::now();
+            
+            sensor_msgs::Image left_img_msg;
+            sensor_msgs::Image right_img_msg;
 
-            // ros::Time diff = camera1_time - start_time;
-            myCvImage.header.stamp = camera1_time;
-            myCvImage.header.frame_id = std::to_string(imageCount); 
+            cv::Mat dst2;
 
-            // convert the CvImage object into a ROS image 
-            myCvImage.toImageMsg(left_img_msg);
+            if (ret1 && ret2) {
+                cv_bridge::CvImage myCvImage_left;
+                cv_bridge::CvImage myCvImage_right;  
 
-            cv::Mat dst;
-            cv::cvtColor(myCvImage.image, dst, cv::COLOR_BGR2RGB); 
-            cv::imshow("left image", dst);
-            cv::waitKey(100);
+                myCvImage_left.image = cv::Mat(height1, width1, CV_8UC3, buffer1);
+                myCvImage_left.encoding = "bgr8";
 
-            // char image_name[256];
-            // std::sprintf(image_name,"CameraLeft%04d_L.png", imageCount);
-            // cv::imwrite(image_name, dst);
+                // ros::Time diff = camera1_time - start_time;
+                myCvImage_left.header.stamp = camera1_time;
+                myCvImage_left.header.frame_id = std::to_string(imageCount); 
 
-          }
-       
-          camera1_prev = camera1_done;
-          imageCount = imageCount + 1;
-          left_imagePublisher.publish(left_img_msg);
-          ros::spinOnce();
+                // convert the CvImage object into a ROS image 
+                myCvImage_left.toImageMsg(left_img_msg);
 
-          if (camera1->getTemperatureReading() > 75) {
-            std::cout << "CRITICAL temperature state, closing camera" << std::endl;
-            break; 
-         }
+                myCvImage_right.image = cv::Mat(height1, width1, CV_8UC3, buffer2);
+                myCvImage_right.encoding = "bgr8";
 
-      }
-    }
+                // ros::Time diff = camera1_time - start_time;
+                myCvImage_right.header.stamp = camera1_time;
+                myCvImage_right.header.frame_id = std::to_string(imageCount); 
+
+                // convert the CvImage object into a ROS image 
+                myCvImage_right.toImageMsg(right_img_msg);                    
+
+                cv::Mat inMat = cv::Mat(height1, width1, CV_8UC3, buffer1);
+                cv::Mat dst;
+                cv::cvtColor(inMat, dst, cv::COLOR_BGR2RGB); 
+                cv::imshow("Left camera", dst);
+                cv::waitKey(100);
+
+                cv::Mat inMat2 = cv::Mat(height2, width2, CV_8UC3, buffer2);
+                cv::Mat dst2;
+                cv::cvtColor(inMat2, dst2, cv::COLOR_BGR2RGB); 
+                cv::imshow("Right camera", dst2);
+                cv::waitKey(100);
+            }
+            imageCount++;
+
+            camera1->stopGrabbing();
+            camera2->stopGrabbing();
+
+            left_imagePublisher.publish(left_img_msg);
+            right_imagePublisher.publish(right_img_msg);
+            
+            if (camera1->getTemperatureReading() > 75) {
+                std::cout << "CRITICAL temperature state, closing camera" << std::endl;
+                break; 
+            }
+
+            ros::spinOnce();
+        }
+    }   
     catch (const std::exception &e)
     {
+        std::cout << "entered catch block" << std::endl;
         // Error handling.
         std::cerr << "An exception occurred." << std::endl
         << e.what() << std::endl;
@@ -231,6 +278,10 @@ int main(int argc, char** argv) {
 
     std::cout << "ending program" << std::endl;
     camera1->finalizeLibrary();
+    camera2->finalizeLibrary();
+
     delete camera1.release();
+    delete camera2.release();
+
     return exitCode;
 }

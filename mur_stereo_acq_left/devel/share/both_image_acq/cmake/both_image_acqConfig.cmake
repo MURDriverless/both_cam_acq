@@ -1,0 +1,1 @@
+/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/both_image_acq/share/both_image_acq/cmake/both_image_acqConfig.cmake

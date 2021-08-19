@@ -1,0 +1,6 @@
+devel_space: /workspace/both_cam_acq/mur_stereo_acq_left/devel
+install: false
+install_space: /workspace/both_cam_acq/mur_stereo_acq_left/install
+profile: default
+source_space: /workspace/both_cam_acq/mur_stereo_acq_left/src
+workspace: /workspace/both_cam_acq/mur_stereo_acq_left

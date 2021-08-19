@@ -1,0 +1,8 @@
+prefix=/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/both_image_acq
+
+Name: both_image_acq
+Description: Description of both_image_acq
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

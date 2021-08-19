@@ -1,0 +1,6 @@
+mur_stereo_basler
+/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/both_image_acq/cmake.lock /workspace/both_cam_acq/mur_stereo_acq_left/devel/./cmake.lock
+/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/both_image_acq/share/both_image_acq/cmake/both_image_acqConfig-version.cmake /workspace/both_cam_acq/mur_stereo_acq_left/devel/share/both_image_acq/cmake/both_image_acqConfig-version.cmake
+/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/both_image_acq/share/both_image_acq/cmake/both_image_acqConfig.cmake /workspace/both_cam_acq/mur_stereo_acq_left/devel/share/both_image_acq/cmake/both_image_acqConfig.cmake
+/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/both_image_acq/lib/both_image_acq/both_image_acq /workspace/both_cam_acq/mur_stereo_acq_left/devel/lib/both_image_acq/both_image_acq
+/workspace/both_cam_acq/mur_stereo_acq_left/devel/.private/both_image_acq/lib/pkgconfig/both_image_acq.pc /workspace/both_cam_acq/mur_stereo_acq_left/devel/lib/pkgconfig/both_image_acq.pc

@@ -1,0 +1,149 @@
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:39:3:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' does not name a type; did you mean '[01m[Kcos[m[K'?
+   [01;31m[Kros[m[K::NodeHandle nh_;
+   [01;31m[K^~~[m[K
+   [32m[Kcos[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:40:3:[m[K [01;31m[Kerror: [m[K'[01m[Kimage_transport[m[K' does not name a type
+   [01;31m[Kimage_transport[m[K::ImageTransport it_;
+   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:41:3:[m[K [01;31m[Kerror: [m[K'[01m[Kimage_transport[m[K' does not name a type
+   [01;31m[Kimage_transport[m[K::Subscriber image_sub_;
+   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:42:3:[m[K [01;31m[Kerror: [m[K'[01m[Kimage_transport[m[K' does not name a type
+   [01;31m[Kimage_transport[m[K::Publisher image_pub_;
+   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:57:22:[m[K [01;31m[Kerror: [m[K'[01m[Ksensor_msgs[m[K' does not name a type
+   void imageCb(const [01;31m[Ksensor_msgs[m[K::ImageConstPtr& msg) {
+                      [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:57:48:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before '[01m[K&[m[K' token
+   void imageCb(const sensor_msgs::ImageConstPtr[01;31m[K&[m[K msg) {
+                                                [01;31m[K^[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:57:48:[m[K [01;31m[Kerror: [m[Kexpected '[01m[K)[m[K' before '[01m[K&[m[K' token
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:57:48:[m[K [01;31m[Kerror: [m[Kexpected '[01m[K;[m[K' at end of member declaration
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:57:50:[m[K [01;31m[Kerror: [m[K'[01m[Kmsg[m[K' does not name a type
+   void imageCb(const sensor_msgs::ImageConstPtr& [01;31m[Kmsg[m[K) {
+                                                  [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:[m[K In constructor '[01m[KImageConverter::ImageConverter()[m[K':
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:45:20:[m[K [01;31m[Kerror: [m[Kclass '[01m[KImageConverter[m[K' does not have any field named '[01m[Kit_[m[K'
+   ImageConverter():[01;31m[Kit_[m[K(nh_) {
+                    [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:45:24:[m[K [01;31m[Kerror: [m[K'[01m[Knh_[m[K' was not declared in this scope
+   ImageConverter():it_([01;31m[Knh_[m[K) {
+                        [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:46:5:[m[K [01;31m[Kerror: [m[K'[01m[Kimage_sub_[m[K' was not declared in this scope
+     [01;31m[Kimage_sub_[m[K = it_.subscribe("/imagePublisher/left_image", 1,
+     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:46:5:[m[K [01;36m[Knote: [m[Ksuggested alternative: '[01m[KimageCb[m[K'
+     [01;36m[Kimage_sub_[m[K = it_.subscribe("/imagePublisher/left_image", 1,
+     [01;36m[K^~~~~~~~~~[m[K
+     [32m[KimageCb[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:46:18:[m[K [01;31m[Kerror: [m[K'[01m[Kit_[m[K' was not declared in this scope
+     image_sub_ = [01;31m[Kit_[m[K.subscribe("/imagePublisher/left_image", 1,
+                  [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:46:18:[m[K [01;36m[Knote: [m[Ksuggested alternative: '[01m[Kint4[m[K'
+     image_sub_ = [01;36m[Kit_[m[K.subscribe("/imagePublisher/left_image", 1,
+                  [01;36m[K^~~[m[K
+                  [32m[Kint4[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:48:5:[m[K [01;31m[Kerror: [m[K'[01m[Kimage_pub_[m[K' was not declared in this scope
+     [01;31m[Kimage_pub_[m[K = it_.advertise("/imagePublisher/left_image", 1);
+     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:48:5:[m[K [01;36m[Knote: [m[Ksuggested alternative: '[01m[KimageCb[m[K'
+     [01;36m[Kimage_pub_[m[K = it_.advertise("/imagePublisher/left_image", 1);
+     [01;36m[K^~~~~~~~~~[m[K
+     [32m[KimageCb[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:[m[K In function '[01m[Kint main(int, char**)[m[K':
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:85:5:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' has not been declared
+     [01;31m[Kros[m[K::init(argc, argv, "Both_Image_Acquisition");
+     [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:86:5:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' has not been declared
+     [01;31m[Kros[m[K::NodeHandle nh;
+     [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:87:5:[m[K [01;31m[Kerror: [m[K'[01m[Kimage_transport[m[K' has not been declared
+     [01;31m[Kimage_transport[m[K::ImageTransport it(nh);
+     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:89:5:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' has not been declared
+     [01;31m[Kros[m[K::Publisher left_imagePublisher = nh.advertise<sensor_msgs::Image>("/imagePublisher/left_image", 1);
+     [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:90:5:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' has not been declared
+     [01;31m[Kros[m[K::Publisher right_imagePublisher = nh.advertise<sensor_msgs::Image>("/imagePublisher/right_image", 1);
+     [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:144:37:[m[K [01;31m[Kerror: [m[Kno matching function for call to '[01m[KIGeniCam::setup(const string&)[m[K'
+         camera1->setup(CAMARA_NAME_L[01;31m[K)[m[K;
+                                     [01;31m[K^[m[K
+In file included from [01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:25:0[m[K:
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/GeniWrap.hpp:12:22:[m[K [01;36m[Knote: [m[Kcandidate: virtual void IGeniCam::setup(std::__cxx11::string, int, int, int)
+         virtual void [01;36m[Ksetup[m[K(const std::string cameraName, int lightSetting, int exposureTimeSetting, int frameRateSetting) = 0;
+                      [01;36m[K^~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/GeniWrap.hpp:12:22:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:145:37:[m[K [01;31m[Kerror: [m[Kno matching function for call to '[01m[KIGeniCam::setup(const string&)[m[K'
+         camera2->setup(CAMARA_NAME_R[01;31m[K)[m[K;
+                                     [01;31m[K^[m[K
+In file included from [01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:25:0[m[K:
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/GeniWrap.hpp:12:22:[m[K [01;36m[Knote: [m[Kcandidate: virtual void IGeniCam::setup(std::__cxx11::string, int, int, int)
+         virtual void [01;36m[Ksetup[m[K(const std::string cameraName, int lightSetting, int exposureTimeSetting, int frameRateSetting) = 0;
+                      [01;36m[K^~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/includes/GeniWrap.hpp:12:22:[m[K [01;36m[Knote: [m[K  candidate expects 4 arguments, 1 provided
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:147:9:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' has not been declared
+         [01;31m[Kros[m[K::Time start_time = ros::Time::now();
+         [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:149:15:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' has not been declared
+         while([01;31m[Kros[m[K::ok() && imageCount < grabCount) {
+               [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:149:28:[m[K [01;31m[Kerror: [m[K'[01m[KimageCount[m[K' was not declared in this scope
+         while(ros::ok() && [01;31m[KimageCount[m[K < grabCount) {
+                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:149:28:[m[K [01;36m[Knote: [m[Ksuggested alternative: '[01m[KgrabCount[m[K'
+         while(ros::ok() && [01;36m[KimageCount[m[K < grabCount) {
+                            [01;36m[K^~~~~~~~~~[m[K
+                            [32m[KgrabCount[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:186:13:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' has not been declared
+             [01;31m[Kros[m[K::Time camera1_time = ros::Time::now();
+             [01;31m[K^~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:188:13:[m[K [01;31m[Kerror: [m[K'[01m[Ksensor_msgs[m[K' has not been declared
+             [01;31m[Ksensor_msgs[m[K::Image left_img_msg;
+             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:189:13:[m[K [01;31m[Kerror: [m[K'[01m[Ksensor_msgs[m[K' has not been declared
+             [01;31m[Ksensor_msgs[m[K::Image right_img_msg;
+             [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:194:17:[m[K [01;31m[Kerror: [m[K'[01m[Kcv_bridge[m[K' has not been declared
+                 [01;31m[Kcv_bridge[m[K::CvImage myCvImage_left;
+                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:195:17:[m[K [01;31m[Kerror: [m[K'[01m[Kcv_bridge[m[K' has not been declared
+                 [01;31m[Kcv_bridge[m[K::CvImage myCvImage_right;
+                 [01;31m[K^~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:197:17:[m[K [01;31m[Kerror: [m[K'[01m[KmyCvImage_left[m[K' was not declared in this scope
+                 [01;31m[KmyCvImage_left[m[K.image = cv::Mat(height1, width1, CV_8UC3, buffer1);
+                 [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:201:47:[m[K [01;31m[Kerror: [m[K'[01m[Kcamera1_time[m[K' was not declared in this scope
+                 myCvImage_left.header.stamp = [01;31m[Kcamera1_time[m[K;
+                                               [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:201:47:[m[K [01;36m[Knote: [m[Ksuggested alternative: '[01m[Kcamera1[m[K'
+                 myCvImage_left.header.stamp = [01;36m[Kcamera1_time[m[K;
+                                               [01;36m[K^~~~~~~~~~~~[m[K
+                                               [32m[Kcamera1[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:205:43:[m[K [01;31m[Kerror: [m[K'[01m[Kleft_img_msg[m[K' was not declared in this scope
+                 myCvImage_left.toImageMsg([01;31m[Kleft_img_msg[m[K);
+                                           [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:207:17:[m[K [01;31m[Kerror: [m[K'[01m[KmyCvImage_right[m[K' was not declared in this scope
+                 [01;31m[KmyCvImage_right[m[K.image = cv::Mat(height1, width1, CV_8UC3, buffer2);
+                 [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:215:44:[m[K [01;31m[Kerror: [m[K'[01m[Kright_img_msg[m[K' was not declared in this scope
+                 myCvImage_right.toImageMsg([01;31m[Kright_img_msg[m[K);
+                                            [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:234:13:[m[K [01;31m[Kerror: [m[K'[01m[Kleft_imagePublisher[m[K' was not declared in this scope
+             [01;31m[Kleft_imagePublisher[m[K.publish(left_img_msg);
+             [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:234:41:[m[K [01;31m[Kerror: [m[K'[01m[Kleft_img_msg[m[K' was not declared in this scope
+             left_imagePublisher.publish([01;31m[Kleft_img_msg[m[K);
+                                         [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:235:13:[m[K [01;31m[Kerror: [m[K'[01m[Kright_imagePublisher[m[K' was not declared in this scope
+             [01;31m[Kright_imagePublisher[m[K.publish(right_img_msg);
+             [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:235:42:[m[K [01;31m[Kerror: [m[K'[01m[Kright_img_msg[m[K' was not declared in this scope
+             right_imagePublisher.publish([01;31m[Kright_img_msg[m[K);
+                                          [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:242:13:[m[K [01;31m[Kerror: [m[K'[01m[Kros[m[K' has not been declared
+             [01;31m[Kros[m[K::spinOnce();
+             [01;31m[K^~~[m[K
+make[2]: *** [CMakeFiles/both_image_acq.dir/src/main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/both_image_acq.dir/all] Error 2
+make: *** [all] Error 2
