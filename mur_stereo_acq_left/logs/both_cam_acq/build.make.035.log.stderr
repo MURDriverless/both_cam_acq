@@ -1,0 +1,10 @@
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:[m[K In function '[01m[Kint main(int, char**)[m[K':
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:199:46:[m[K [01;31m[Kerror: [m[K'[01m[KframeTime1[m[K' was not declared in this scope
+             std::cout << ", AbsTime is: " << [01;31m[KframeTime1[m[K << " ms";
+                                              [01;31m[K^~~~~~~~~~[m[K
+[01m[K/workspace/both_cam_acq/mur_stereo_acq_left/src/mur_stereo_basler/src/main.cpp:200:51:[m[K [01;31m[Kerror: [m[K'[01m[KframeTime2[m[K' was not declared in this scope
+             std::cout << ", RelativeTime is: " << [01;31m[KframeTime2[m[K << std::endl;
+                                                   [01;31m[K^~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/both_cam_acq.dir/src/main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/both_cam_acq.dir/all] Error 2
+make: *** [all] Error 2
